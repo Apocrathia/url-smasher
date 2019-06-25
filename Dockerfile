@@ -2,7 +2,7 @@ FROM alpine:latest
 RUN apk update
 RUN apk upgrade
 
-RUN apk add torsock
+RUN apk add torsocks
 
 RUN rm /var/cache/apk/*
 
