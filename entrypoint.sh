@@ -2,4 +2,4 @@
 
 tor -f /etc/tor/torrc &>/dev/null &
 
-exec torsocks $@
+exec torsocks bash ~/url-smasher.sh -u $@
