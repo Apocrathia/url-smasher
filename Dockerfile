@@ -10,5 +10,5 @@ COPY ./url-smasher.sh ~/url-smasher.sh
 COPY ./user_agents ~/user_agents
 COPY ./entrypoint.sh ~/entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["~/entrypoint.sh"]
 CMD ["bash"]
