@@ -41,21 +41,11 @@ echo "Commence the smashing. Press [CTRL+C] to stop."
 # Import all of the user agents
 source user_agents
 
-# Start the loop
-while :
-do
-    # Grab a random user agent
-    random_user_agent=${USER_AGENT[$RANDOM % ${#USER_AGENT[@]} ]}
+# Grab a random user agent
+random_user_agent=${USER_AGENT[$RANDOM % ${#USER_AGENT[@]} ]}
 
-    # What IP are we using?
-    echo "Hitting $url from $(torsocks curl --silent http://icanhazip.com)"
+# What IP are we using?
+echo "Hitting $url from $(torsocks curl --silent http://icanhazip.com)"
 
-    # Hit the target
-    torsocks curl --silent -A "$random_user_agent" $url > /dev/null
-
-    # Hangup the Tor connection (New IP)
-    service tor restart
-
-    # Sleep
-    sleep $wait_time
-done
+# Hit the target
+torsocks curl --silent -A "$random_user_agent" $url > /dev/null
