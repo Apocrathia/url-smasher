@@ -48,4 +48,4 @@ random_user_agent=${USER_AGENT[$RANDOM % ${#USER_AGENT[@]} ]}
 echo "Hitting $url from $(torsocks curl --silent http://icanhazip.com)"
 
 # Hit the target
-torsocks curl --silent -A "$random_user_agent" $url > /dev/null
+curl --silent -A "$random_user_agent" $url > /dev/null
