@@ -45,7 +45,7 @@ source user_agents
 random_user_agent=${USER_AGENT[$RANDOM % ${#USER_AGENT[@]} ]}
 
 # What IP are we using?
-echo "Hitting $url from $(torsocks curl --silent http://icanhazip.com)"
+echo "Hitting $url from $(curl --silent http://icanhazip.com)"
 
 # Hit the target
 curl --silent -A "$random_user_agent" $url > /dev/null
